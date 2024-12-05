@@ -16,9 +16,9 @@ functions.http('openai-4', async (req, res) => {
   } else {
     try {
       const completion = await openai.chat.completions.create(req.body)
-      res.status(200).send(completion)
+      res.status(200).json(completion)
     } catch (error) {
-      res.status(500).send(error)
+      res.status(500).json(error)
     }
   }
 })
